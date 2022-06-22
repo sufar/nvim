@@ -64,7 +64,7 @@ return require('packer').startup(function(use)
   }
 
   -- Comment
---  use "b3nj5m1n/kommentary"
+  --  use "b3nj5m1n/kommentary"
 
   -- java
   use "mfussenegger/nvim-jdtls"
@@ -85,7 +85,7 @@ return require('packer').startup(function(use)
 
   -- json
   use "b0o/schemastore.nvim"
-  
+
   -- golang
   use "leoluz/nvim-dap-go"
 
@@ -100,6 +100,7 @@ return require('packer').startup(function(use)
   use { 'dracula/vim', as = 'dracula' }
   use "folke/lsp-colors.nvim"
   use { "ellisonleao/gruvbox.nvim" }
+  use "sainnhe/edge"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
