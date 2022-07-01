@@ -197,6 +197,12 @@ local leader_mappings = {
     },
   },
 
+  m = {
+    name = "Markdown",
+    p = { "<cmd>Glow<cr>", "Preview"},
+    i = { "<cmd>PasteImg<cr>", "Paste Image" },
+  },
+
   l = {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },

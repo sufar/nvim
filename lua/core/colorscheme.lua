@@ -9,8 +9,8 @@ try
 
   " colorscheme gruvbox
 
-  let g:edge_style = 'aura'
-  let g:edge_better_performance = 1
+  " let g:edge_style = 'aura'
+  " let g:edge_better_performance = 1
   colorscheme edge
 
 catch /^Vim\%((\a\+)\)\=:E185/

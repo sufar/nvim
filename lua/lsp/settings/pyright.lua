@@ -4,15 +4,42 @@ opts.config ={
 	settings = {
 
     python = {
-      analysis = {
-        typeCheckingMode = "off"
-      }
+      -- exclude = { ".venv" },
+      -- venvPath = "./.venv/",
+      -- executionEnvironments = {
+      --   root = "./",
+      --
+      --   venv = "./",
+      -- }
+      -- venvPath = ".",
+      -- venv = ".venv",
+
+      -- autoSearchPaths = true,
+      -- diagnosticMode = "workspace",
+      -- useLibraryCodeForTypes = true,
+
+      -- autoComplete = {
+      --   extraPaths = "/soft/anaconda3/envs/tensorflow/lib/python3.9/site-packages",
+      -- },
+      -- analysis = {
+      --   extraPaths = "/soft/anaconda3/envs/tensorflow/lib/python3.9/site-packages",
+      -- },
+
+      -- autoComplete = {
+      --   extraPaths = "/data/workspaces/zugle/tensorflow/hello-tf/venv/lib/python3.10/site-packages",
+      -- },
+      -- analysis = {
+      --   typeCheckingMode = "off",
+      --   extraPaths = "/data/workspaces/zugle/tensorflow/hello-tf/venv/lib/python3.10/site-packages",
+      -- }
     }
 	},
 }
 
 opts.on_attach = function(client, bufnr)
+  -- require('dap-python').setup("/data/workspaces/zugle/tensorflow/hello-tf/venv/bin/python", {})
   require('dap-python').setup("python", {})
+  -- require('dap-python').setup("/soft/anaconda3/envs/tensorflow/bin/python", {})
 
   -- whick-key bind.
   local status_ok, which_key = pcall(require, "which-key")

@@ -1,6 +1,9 @@
 require "tools.rest"
+require "tools.trouble"
+require "tools.clipboard-image"
+
+-- require("tools.todo")
 -- require "tools.colorizer"
--- require "tools.trouble"
 -- require "tools.flutter"
 -- use sqls instead
 -- require "tools.dadbod-completion"

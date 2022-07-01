@@ -166,6 +166,10 @@ return require('packer').startup(function(use)
   }
   -- use "kevinhwang91/nvim-bqf"
 
+  -- markdown
+  use "ellisonleao/glow.nvim"
+  use "ekickx/clipboard-image.nvim"
+
   -- sniprun
   use "michaelb/sniprun"
 

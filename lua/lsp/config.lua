@@ -5,7 +5,6 @@ end
 
 local servers = {
   sumneko_lua = require "lsp.settings.sumneko_lua", -- /lua/lsp/lua.lua
-  -- jdtls = require "lsp.java", -- /lua/lsp/jdtls.lua
   jsonls = require("lsp.settings.jsonls"),
   pyright = require("lsp.settings.pyright"),
   gopls = require "lsp.settings.gopls",
@@ -15,7 +14,10 @@ local servers = {
   -- sqlls = require "lsp.settings.sqlls",
   taplo = require "lsp.settings.taplo_toml",
   bashls = require "lsp.settings.bashls",
+  -- volar = require "lsp.settings.volar",
   vuels = require "lsp.settings.vuels",
+  tsserver = require "lsp.settings.tsserver",
+  html = require "lsp.settings.html",
   lemminx = require "lsp.settings.lemminx_xml",
 }
 
@@ -49,7 +51,7 @@ M.setup = function()
     { name = "DiagnosticSignError", text = "" },
     { name = "DiagnosticSignWarn", text = "" },
     { name = "DiagnosticSignHint", text = "" },
-{ name = "DiagnosticSignInfo", text = "" },
+    { name = "DiagnosticSignInfo", text = "" },
   }
 
   for _, sign in ipairs(signs) do

@@ -34,21 +34,7 @@ opts.on_attach = function(client, bufnr)
       ["u"] = { "<Cmd>FlutterPubUpgrade<CR>", "Flutter Pub Upgrade" },
     }
 
-    local f_vopts = {
-      mode = "v",
-      prefix = "f",
-      buffer = bufnr,
-      silent = true,
-      noremap = true,
-      nowait = true,
-    }
-
-    local f_vmappings = {
-      ["t"] = { "<cmd>lua require('dap-python').debug_selection()<CR>", "Debug Selection"},
-    }
-
     which_key.register(f_nmappings, f_nopts)
-    which_key.register(f_vmappings, f_vopts)
   end
 end
 

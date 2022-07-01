@@ -10,15 +10,15 @@ local env = {
   HOME = os.getenv("HOME"),
   JAVA_HOME = os.getenv("JAVA_HOME")
 }
--- local jdk11_home = "/soft/jdk-11.0.14"
-local jdk11_home = "/soft/jdk-17.0.3.1"
+local jdk11_home = "/soft/jdk-11.0.14"
+-- local jdk11_home = "/soft/jdk-17.0.3.1"
 local function get_jdk11()
   return jdk11_home or env.JAVA_HOME
 end
 
 -- If you started neovim within `~/dev/xy/project-1` this would resolve to `project-1`
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local workspace_dir = env.HOME .. '/.workspace' .. project_name
+local workspace_dir = env.HOME .. '/.workspace/' .. project_name
 
 -- lsp-status
 --local lsp_status = require('lsp-status')
