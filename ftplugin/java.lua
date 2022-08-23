@@ -10,10 +10,16 @@ local env = {
   HOME = os.getenv("HOME"),
   JAVA_HOME = os.getenv("JAVA_HOME")
 }
-local jdk11_home = "/soft/jdk-11.0.14"
--- local jdk11_home = "/soft/jdk-17.0.3.1"
-local function get_jdk11()
-  return jdk11_home or env.JAVA_HOME
+
+-- local path = package.searchpath("~/.config/nvim/resources/java", "lombok-*")
+-- vim.notify(path)
+
+-- local java_home = "/soft/jdk-11.0.14"
+local java_home = ""
+local java8_home = "/soft/jdk1.8.0_202"
+local java11_home = "/soft/jdk-11.0.14"
+local function get_java_home()
+  return java_home or env.JAVA_HOME
 end
 
 -- If you started neovim within `~/dev/xy/project-1` this would resolve to `project-1`
@@ -156,7 +162,7 @@ local config = {
   cmd = {
 
     -- 💀
-    get_jdk11() .. '/bin/java', -- or '/path/to/java11_or_newer/bin/java'
+    get_java_home() .. '/bin/java', -- or '/path/to/java11_or_newer/bin/java'
     -- depends on if `java` is in your $PATH env variable and if it points to the right version.
 
     '-Declipse.application=org.eclipse.jdt.ls.core.id1',
@@ -186,7 +192,7 @@ local config = {
   -- for a list of options
   settings = {
     java = {
-      home = get_jdk11(),
+      home = get_java_home(),
       project = {
         resourceFilters = {
           "node_modules",
@@ -236,17 +242,17 @@ local config = {
         runtimes = {
           {
             name = "JavaSE-1.8",
-            path = "/soft/jdk1.8.0_202",
+            path = java8_home,
             default = true,
           },
           {
             name = "JavaSE-11",
-            path = "/soft/jdk-11.0.14"
+            path = java11_home
           }
         },
         maven = {
-          userSettings = env.HOME .. '/.m2/settings.xml',
-          globalSettings = env.HOME .. '/.m2/settings.xml',
+          userSettings = env.HOME .. '/.m2/settings_huawei.xml',
+          globalSettings = env.HOME .. '/.m2/settings_huawei.xml',
         },
         completion = {
           favoriteStaticMembers = {
