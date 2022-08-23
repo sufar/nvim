@@ -125,7 +125,8 @@ local leader_opts = {
 }
 
 local leader_mappings = {
-  ["/"] = { "<cmd>lua require(\"Comment.api\").toggle_current_linewise()<CR>", "Comment" },
+  ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
+  --["/"] = { "<cmd>lua require(\"Comment.api\").toggle_current_linewise()<CR>", "Comment" },
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["b"] = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -267,7 +268,8 @@ local leader_vopts = {
   nowait = true, -- use `nowait` when creating keymaps
 }
 local leader_vmappings = {
-  ["/"] = { "<ESC><CMD>lua require(\"Comment.api\").toggle_linewise_op(vim.fn.visualmode())<CR>", "Comment" },
+  ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment" },
+ -- ["/"] = { "<ESC><CMD>lua require(\"Comment.api\").toggle_linewise_op(vim.fn.visualmode())<CR>", "Comment" },
 }
 
 which_key.setup(setup)
