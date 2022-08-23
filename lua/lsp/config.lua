@@ -7,6 +7,7 @@ local servers = {
   sumneko_lua = require "lsp.settings.sumneko_lua", -- /lua/lsp/lua.lua
   jsonls = require("lsp.settings.jsonls"),
   pyright = require("lsp.settings.pyright"),
+  clangd = require "lsp.settings.clangd",
   gopls = require "lsp.settings.gopls",
   -- rust_analyzer = require 'lsp.rust_analyzer',
   yamlls = require "lsp.settings.yamlls",
@@ -19,6 +20,7 @@ local servers = {
   tsserver = require "lsp.settings.tsserver",
   html = require "lsp.settings.html",
   lemminx = require "lsp.settings.lemminx_xml",
+  cssls = require "lsp.settings.cssls",
 }
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
