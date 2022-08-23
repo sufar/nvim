@@ -4,7 +4,6 @@ local dap_rust = require("lsp.dap.dap-rust")
 -- rust-tools options
 opts.tools = {
   autoSetHints = true,
-  hover_with_actions = true,
   inlay_hints = {
     show_parameter_hints = true,
     parameter_hints_prefix = "",
