@@ -68,7 +68,6 @@ return require('packer').startup(function(use)
 
   -- java
   use "mfussenegger/nvim-jdtls"
-  use "aloussase/telescope-maven-search"
 
   -- scala
   use({ 'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" } })

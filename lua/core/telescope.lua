@@ -126,6 +126,4 @@ telescope.setup {
 
 telescope.load_extension('media_files')
 telescope.load_extension("ui-select")
--- :Telescope maven_search query=commons-lang3
-telescope.load_extension('maven_search')
 telescope.load_extension("flutter")

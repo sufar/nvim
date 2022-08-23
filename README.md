@@ -63,7 +63,7 @@ sudo pacman -S delve
 - [nvim-dap](https://github.com/mfussenegger/nvim-dap)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)
-- `:Telescope maven_search query=commons-lang3`[telescope-ui-select.nvim](https://github.com/nvim-telescope/telescope-ui-select.nvim)
+- [telescope-ui-select.nvim](https://github.com/nvim-telescope/telescope-ui-select.nvim)
 - [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 - [vim-bbye](https://github.com/moll/vim-bbye)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
