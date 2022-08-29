@@ -5,8 +5,6 @@ require "tools.clipboard-image"
 -- require("tools.todo")
 -- require "tools.colorizer"
 -- require "tools.flutter"
--- use sqls instead
--- require "tools.dadbod-completion"
 -- vim.cmd[[
 -- function! s:http_rest_init() abort
 --   lua require('tools.rest')

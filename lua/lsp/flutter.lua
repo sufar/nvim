@@ -1,4 +1,8 @@
 local flutter_home = os.getenv("FLUTTER_HOME")
+if not flutter_home then
+  return
+end
+
 local dap = require("dap")
 local dap_flutter = require "lsp.dap.dap-flutter"
 local my_custom_on_attach = require("lsp.settings.dartls")

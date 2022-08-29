@@ -78,9 +78,6 @@ return require('packer').startup(function(use)
 
   -- sql
   use "nanotee/sqls.nvim"
-  use "tpope/vim-dadbod"
-  use "kristijanhusak/vim-dadbod-ui"
-  use "kristijanhusak/vim-dadbod-completion"
 
   -- json
   use "b0o/schemastore.nvim"
