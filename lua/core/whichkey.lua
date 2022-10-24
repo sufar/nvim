@@ -87,7 +87,7 @@ WHICHKEY_CONFIG.g_nmappings = {
   ["d"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go To Definition" },
   ["D"] = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Go To Declaration" },
   ["i"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go To Implementation" },
-  ["f"] = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Formatting" },
+  ["f"] = { "<cmd>lua vim.lsp.buf.format { async = true }<CR>", "Formatting" },
   ["r"] = { "<cmd>lua vim.lsp.buf.references()<CR>", "Go To References" },
   ["["] = { "<cmd>lua vim.lsp.diagnostic.goto_prev { wrap = false }<CR>", "Diagnostic Goto Prev" },
   ["]"] = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Diagnostic Goto Next" },
@@ -215,7 +215,7 @@ local leader_mappings = {
       "<cmd>Telescope lsp_workspace_diagnostics<cr>",
       "Workspace Diagnostics",
     },
-    f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+    f = { "<cmd>lua vim.lsp.buf.format { async = true }<cr>", "Format" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
     j = {
