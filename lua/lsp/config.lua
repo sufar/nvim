@@ -23,7 +23,7 @@ local servers = {
   cssls = require "lsp.settings.cssls",
 }
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 for name, m in pairs(servers) do
   local opts = m.config;

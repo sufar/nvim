@@ -15,7 +15,7 @@ local env = {
 -- vim.notify(path)
 
 -- local java_home = "/soft/jdk-11.0.14"
-local java_home = ""
+local java_home = "/soft/jdk-17.0.3.1"
 local java8_home = "/soft/jdk1.8.0_202"
 local java11_home = "/soft/jdk-11.0.14"
 local function get_java_home()
@@ -185,7 +185,7 @@ local config = {
   -- This is the default if not provided, you can remove it. Or adjust as needed.
   -- One dedicated LSP server & client will be started per unique root_dir
   --[[ root_dir = require('jdtls.setup').find_root({ '.git', 'mvnw', 'gradlew' }), ]]
-  root_dir = require('jdtls.setup').find_root({ '.git', 'mvnw' }),
+  root_dir = require('jdtls.setup').find_root({ 'build.gradle', 'pom.xml' }),
   -- root_dir = require('jdtls.setup').find_root({ '.git', 'mvnw', 'gradlew', 'pom.xml' }),
 
   -- Here you can configure eclipse.jdt.ls specific settings

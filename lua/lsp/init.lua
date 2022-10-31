@@ -6,7 +6,33 @@ require "lsp.config".setup()
 require "lsp.tools"
 require "lsp.flutter"
 require "lsp.rust"
-require "lsp.metals"
+
+local dap = require("dap")
+
+dap.configurations.scala = {
+  {
+    type = "scala",
+    request = "launch",
+    name = "RunOrTest",
+    metals = {
+      runType = "runOrTestFile",
+      --args = { "firstArg", "secondArg", "thirdArg" }, -- here just as an example
+    },
+  },
+  {
+    type = "scala",
+    request = "launch",
+    name = "Test Target",
+    metals = {
+      runType = "testTarget",
+    },
+  },
+}
+
+vim.cmd([[autocmd FileType scala,sbt lua require("metals").initialize_or_attach({})]])
+
+require("metals").setup_dap()
+--[[ require "lsp.metals" ]]
 
 -- Auto install LanguageServers
 -- for name, _ in pairs(servers) do

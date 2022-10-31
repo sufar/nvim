@@ -56,7 +56,7 @@ return require('packer').startup(function(use)
   use "JoosepAlviste/nvim-ts-context-commentstring"
   use "RRethy/vim-illuminate" -- highlighting other uses of the current word under the cursor
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-  use "ryanoasis/vim-devicons"
+  --[[ use "ryanoasis/vim-devicons" ]]
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight, Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
   use {
     'phaazon/hop.nvim',
