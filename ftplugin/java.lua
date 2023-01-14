@@ -34,9 +34,10 @@ local on_attach = function(client, bufnr)
   require 'jdtls'.setup_dap({ hotcodereplace = 'auto' })
   require 'jdtls.setup'.add_commands()
   require('jdtls.dap').setup_dap_main_class_configs()
-  require("aerial").on_attach(client, bufnr)
+  --[[ require("aerial").on_attach(client, bufnr) ]]
   require "core.fidget"
-  require 'illuminate'.on_attach(client)
+  --[[ require 'illuminate'.on_attach(client) ]]
+  require('jdtls.dap').setup_dap_main_class_configs()
   -- lsp_status.on_attach(client)
   --  require 'lspsaga'.init_lsp_saga()
   --  require('core.keybindings').maplsp(bufnr)
@@ -149,12 +150,19 @@ local capabilities = {
 local extendedClientCapabilities = require 'jdtls'.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
+local mason_home = vim.fn.stdpath "data" .. "/mason"
+
+vim.notify(mason_home)
+
 -- java-debug
 local bundles = {
-  vim.fn.glob(env.HOME .. "/.config/nvim/resources/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar")
+  --[[ vim.fn.glob(env.HOME .. "/.config/nvim/resources/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-0.39.0.jar") ]]
+  --[[ vim.fn.glob("/home/zugle/.config/nvim/resources/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-0.39.0.jar", 1) ]]
+  vim.fn.glob(mason_home .. "/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-0.43.0.jar", 1)
 }
 -- vscode-java-test
-vim.list_extend(bundles, vim.split(vim.fn.glob(env.HOME .. "/.config/nvim/resources/java/vscode-java-test/server/*.jar"), "\n"))
+--[[ vim.list_extend(bundles, vim.split(vim.fn.glob(env.HOME .. "/.config/nvim/resources/java/vscode-java-test/server/*.jar"), "\n")) ]]
+vim.list_extend(bundles, vim.split(vim.fn.glob(mason_home .. "/packages/java-test/extension/server/*.jar"), "\n"))
 
 local config = {
   -- The command that starts the language server
@@ -185,8 +193,9 @@ local config = {
   -- This is the default if not provided, you can remove it. Or adjust as needed.
   -- One dedicated LSP server & client will be started per unique root_dir
   --[[ root_dir = require('jdtls.setup').find_root({ '.git', 'mvnw', 'gradlew' }), ]]
-  root_dir = require('jdtls.setup').find_root({ 'build.gradle', 'pom.xml' }),
+  --[[ root_dir = require('jdtls.setup').find_root({ 'build.gradle', 'pom.xml' }), ]]
   -- root_dir = require('jdtls.setup').find_root({ '.git', 'mvnw', 'gradlew', 'pom.xml' }),
+  root_dir = vim.fs.dirname(vim.fs.find({'.git', 'build.gradle', 'pom.xml'}, { upward = true})[1]),
 
   -- Here you can configure eclipse.jdt.ls specific settings
   -- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
@@ -252,8 +261,8 @@ local config = {
           }
         },
         maven = {
-          userSettings = env.HOME .. '/.m2/settings_huawei.xml',
-          globalSettings = env.HOME .. '/.m2/settings_huawei.xml',
+          userSettings = env.HOME .. '/.m2/settings.xml',
+          globalSettings = env.HOME .. '/.m2/settings.xml',
         },
         completion = {
           favoriteStaticMembers = {
@@ -338,3 +347,4 @@ function remove_unused_imports()
   vim.cmd('cclose')
   vim.cmd('wa')
 end
+
