@@ -116,6 +116,11 @@ return require('packer').startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "RishabhRD/nvim-lsputils"
   use "j-hui/fidget.nvim"
+
+  -- mason
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
+
   --  use "arkav/lualine-lsp-progress"
   --  use "nvim-lua/lsp-status.nvim"
   --  use "glepnir/lspsaga.nvim"

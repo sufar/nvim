@@ -15,12 +15,9 @@ local env = {
 -- vim.notify(path)
 
 -- local java_home = "/soft/jdk-11.0.14"
-local java_home = "/soft/jdk-17.0.3.1"
-local java8_home = "/soft/jdk1.8.0_202"
-local java11_home = "/soft/jdk-11.0.14"
-local function get_java_home()
-  return java_home or env.JAVA_HOME
-end
+local java_home = env.JAVA_HOME
+local java8_home = env.JAVA8_HOME
+local java11_home = env.JAVA11_HOME
 
 -- If you started neovim within `~/dev/xy/project-1` this would resolve to `project-1`
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
@@ -170,7 +167,7 @@ local config = {
   cmd = {
 
     -- 💀
-    get_java_home() .. '/bin/java', -- or '/path/to/java11_or_newer/bin/java'
+    java_home .. '/bin/java', -- or '/path/to/java11_or_newer/bin/java'
     -- depends on if `java` is in your $PATH env variable and if it points to the right version.
 
     '-Declipse.application=org.eclipse.jdt.ls.core.id1',
@@ -180,12 +177,12 @@ local config = {
     '-Dlog.level=ALL',
     '-Xms1g',
     '-Xmx2g',
-    '-javaagent:' .. env.HOME .. '/.config/nvim/resources/java/lombok-1.18.24.jar',
+    '-javaagent:' .. mason_home .. '/packages/jdtls/lombok.jar',
     '--add-modules=ALL-SYSTEM',
     '--add-opens', 'java.base/java.util=ALL-UNNAMED',
     '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-    '-jar', env.HOME .. '/.config/nvim/resources/java/jdtls-server/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
-    '-configuration', env.HOME .. '/.config/nvim/resources/java/jdtls-server/config_linux',
+    '-jar', mason_home .. '/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
+    '-configuration', mason_home .. '/packages/jdtls/config_linux',
     '-data', workspace_dir
   },
 
@@ -202,7 +199,7 @@ local config = {
   -- for a list of options
   settings = {
     java = {
-      home = get_java_home(),
+      home = java_home,
       project = {
         resourceFilters = {
           "node_modules",
