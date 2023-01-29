@@ -21,6 +21,12 @@ require("mason-lspconfig").setup_handlers {
         }
         vim.list_extend(bundles,
           vim.split(vim.fn.glob(MASON_HOME .. "/packages/java-test/extension/server/*.jar", 1), "\n"))
+        local on_attach = function(client, bufnr)
+          require 'jdtls'.setup_dap({ hotcodereplace = 'auto' })
+          require 'jdtls.setup'.add_commands()
+          require('jdtls.dap').setup_dap_main_class_configs()
+        end
+
         local config = {
           cmd = { MASON_HOME .. '/packages/jdtls/bin/jdtls', '-data', workspace_dir,
             '-javaagent:' .. MASON_HOME .. '/packages/jdtls/lombok.jar' },
@@ -46,12 +52,10 @@ require("mason-lspconfig").setup_handlers {
           init_options = {
             bundles = bundles,
             extendedClientCapabilities = extendedClientCapabilities
-          }
+          },
+          on_attach = on_attach,
         }
         require('jdtls').start_or_attach(config)
-        require 'jdtls'.setup_dap({ hotcodereplace = 'auto' })
-        require 'jdtls.setup'.add_commands()
-        require('jdtls.dap').setup_dap_main_class_configs()
       end,
       group = vim.api.nvim_create_augroup("jdtls", { clear = true })
     })
