@@ -133,7 +133,7 @@ local leader_mappings = {
     "Buffers",
   },
   ["B"] = { "<cmd>DBUIToggle<CR>", "Database" },
-  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+  ["e"] = { ":NvimTreeToggle<cr>", "Explorer" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["c"] = { "<cmd>Bdelete<CR>", "Close Buffer" },

@@ -21,9 +21,9 @@ require "core.dapui"
 require "core.aerial-nvim"
 require "core.fidget"
 require "core.diffview-nvim"
-require "core.mason"
 require "lsp"
-require "lsp.dap"
-require "tools"
+require "lsp.golang"
+--[[ require "lsp.dap" ]]
+--[[ require "tools" ]]
 -- require "lsp.debug.dap-rust"
 -- require "lsp.debug.dap-flutter"

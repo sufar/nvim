@@ -1,25 +1,5 @@
 Rust golang java scala vue flutter's neovim development environment configurations
 
-## alacritty
-set alacritty Nerd fonts
-```yaml
-# Font configuration
-font:
-  normal:
-    family: SauceCodePro Nerd Font
-    style: Regular
-  bold:
-    family: SauceCodePro Nerd Font
-    style: Bold
-  italic:
-    family: SauceCodePro Nerd Font
-    style: Italic
-  bold_italic:
-    family: SauceCodePro Nerd Font
-    style: Bold Italic
-  size: 11
-```
-
 ## dependency
 ```shell
 sudo pacman -S xsel
@@ -31,59 +11,108 @@ sudo pacman -S ripgrep
 sudo pacman -S jq
 sudo pacman -S graphviz
 yay -S sniprun
-```
-
-```
 pip install neovim
 ```
 
+## rust
+
+Please don't use mason install `rust-analyzer` and `codelldb`
+
+## java
+
+In neovim exec `:MasonInstall jdtls` and `:MasonInstall java-test` and `:MasonInstall java-debug-adapter`
+
 ## python
+
+In neovim exec `:MasonInstall pyright` and don't install the debugpy
 
 ```
 pip install debugpy
 ```
 [nvim-dap-python](https://github.com/mfussenegger/nvim-dap-python)
 
+## flutter
+
+In neovim exec `:MasonInstall dart-debug-adapter`
+
+## golang
+
+### Configure golang environment 
+Make sure the $GOPATH/bin path is added to your $PATH environment variable. To check this you can run
+```bash
+echo $PATH | grep "$GOPATH/bin"
+```
+If nothing shows up, you can add the following to your shell config file:
+```bash
+export PATH=$PATH:$GOPATH/bin
+```
+
+In neovim exec `:GoInstallBinaries`
+
+The neovim configuration file: `lua/lsp/golang.lua`
+
+Please don't use mason to install `gopls` and `go-debug-adapter`
+
+### golang documents
+
+[ray-x/go.nvim](https://github.com/ray-x/go.nvim)
+
+### golang debug
+
+debug main: `:GoDebug`
+
+debug test: when cursor in test function, nvim exec `:GoDebug -t`
+
+## vue
+
+In neovim exec `:MasonInstall vue-language-server`, which will install volar.
+
+## lua
+
+In neovim exec `:MasonInstall lua-language-server`
+
+## json
+
+In neovim exec `:MasonInstall json-lsp`
+
+## yaml
+
+In neovim exec `:MasonInstall yaml-language-server`
+
+## sql
+
+In neovim exec `:MasonInstall sqls` and `:MasonInstall sqlls`
+
+[nanotee/sqls.nvim](https://github.com/nanotee/sqls.nvim)
+
+Connection configuration file: `~/.config/sqls/config.yml`
+
+## toml
+
+In neovim exec `:MasonInstall taplo`
+
+## xml
+
+In neovim exec `:MasonInstall lemminx`
+
 ## bash
+
+In neovim exec `:MasonInstall bash-language-server`
+
 ```
 sudo pacman -S shellcheck
 ```
 [bash-language-server](https://github.com/bash-lsp/bash-language-server)
 [shellcheck](https://github.com/koalaman/shellcheck#installing)
 
-## golang
-```
-sudo pacman -S delve
-```
-[nvim-dap-go](https://github.com/leoluz/nvim-dap-go)
+## css
 
-## plugins
-- [Neovim-from-scratch](https://github.com/LunarVim/Neovim-from-scratch)
-- [which-key.nvim](https://github.com/folke/which-key.nvim)
-- [nvim-dap](https://github.com/mfussenegger/nvim-dap)
-- [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
-- [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)
-- [telescope-ui-select.nvim](https://github.com/nvim-telescope/telescope-ui-select.nvim)
-- [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
-- [vim-bbye](https://github.com/moll/vim-bbye)
-- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
-- [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer)
-- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-- [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
-- [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
-- [impatient.nvim](https://github.com/lewis6991/impatient.nvim)
-- [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
-- [project.nvim](https://github.com/ahmedkhalf/project.nvim)
-- [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
-- [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
-- [Comment.nvim](https://github.com/numToStr/Comment.nvim)
-- [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
-- [vim-illuminate](https://github.com/RRethy/vim-illuminate)
-- [rust-tools.nvim](https://github.com/simrat39/rust-tools.nvim#configuration)
-- [crates.nvim](https://github.com/Saecki/crates.nvim)
-- [trouble.nvim](https://github.com/folke/trouble.nvim)
-- [diffview.nvim](https://github.com/sindrets/diffview.nvim)
-- [sniprun](https://github.com/michaelb/sniprun)
-- [hop.nvim](https://github.com/phaazon/hop.nvim)
-- [clipboard-image.nvim](https://github.com/ekickx/clipboard-image.nvim)
-- [glow.nvim](https://github.com/ellisonleao/glow.nvim)
+In neovim exec `:MasonInstall css-lsp`
+
+## html
+
+In neovim exec `:MasonInstall html-lsp`
+
+## javascript typescript
+
+In neovim exec `:MasonInstall typescript-language-server`

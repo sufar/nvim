@@ -73,7 +73,9 @@ return require('packer').startup(function(use)
   use({ 'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" } })
 
   -- rust
-  use "simrat39/rust-tools.nvim"
+  use { "simrat39/rust-tools.nvim" , 
+    commit ="df584e84393ef255f5b8cbd709677d6a3a5bf42f"
+  }
   use "saecki/crates.nvim"
 
   -- sql
@@ -83,7 +85,9 @@ return require('packer').startup(function(use)
   use "b0o/schemastore.nvim"
 
   -- golang
-  use "leoluz/nvim-dap-go"
+  --[[ use "leoluz/nvim-dap-go" ]]
+  use 'ray-x/go.nvim'
+  use { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' } -- recommended if need floating window support
 
   -- flutter
   use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' }
@@ -113,7 +117,7 @@ return require('packer').startup(function(use)
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  --[[ use "williamboman/nvim-lsp-installer" -- simple to use language server installer ]]
   use "RishabhRD/nvim-lsputils"
   use "j-hui/fidget.nvim"
 
@@ -129,7 +133,7 @@ return require('packer').startup(function(use)
 
   -- Debug
   use "mfussenegger/nvim-dap"
-  use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+  use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" }, commit = "f7fc98ead677ffed72d4eec331eb439a7bad3bbf" }
   use "theHamsta/nvim-dap-virtual-text"
   use "mfussenegger/nvim-dap-python"
 

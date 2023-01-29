@@ -76,7 +76,6 @@ dap.configurations.scala = {
 
 metals_config.on_attach = function(client, bufnr)
   require("metals").setup_dap()
-  require("aerial").on_attach(client, bufnr)
   -- require 'illuminate'.on_attach(client)
 end
 -- global
