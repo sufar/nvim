@@ -37,7 +37,6 @@ In neovim exec `:MasonInstall dart-debug-adapter`
 
 ## golang
 
-### Configure golang environment 
 Make sure the $GOPATH/bin path is added to your $PATH environment variable. To check this you can run
 ```bash
 echo $PATH | grep "$GOPATH/bin"
@@ -53,15 +52,17 @@ The neovim configuration file: `lua/lsp/golang.lua`
 
 Please don't use mason to install `gopls` and `go-debug-adapter`
 
-### golang documents
-
-[ray-x/go.nvim](https://github.com/ray-x/go.nvim)
-
-### golang debug
+Debug:
 
 debug main: `:GoDebug`
 
 debug test: when cursor in test function, nvim exec `:GoDebug -t`
+
+[ray-x/go.nvim](https://github.com/ray-x/go.nvim)
+
+## scala
+
+[scalameta/nvim-metals](https://github.com/scalameta/nvim-metals)
 
 ## vue
 
@@ -103,6 +104,7 @@ In neovim exec `:MasonInstall bash-language-server`
 sudo pacman -S shellcheck
 ```
 [bash-language-server](https://github.com/bash-lsp/bash-language-server)
+
 [shellcheck](https://github.com/koalaman/shellcheck#installing)
 
 ## css

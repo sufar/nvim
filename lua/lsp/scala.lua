@@ -94,10 +94,3 @@ api.nvim_create_autocmd("FileType", {
   end,
   group = nvim_metals_group,
 })
-
--- Debug settings if you're using nvim-dap
--- local dap = require("dap")
--- local dap_scala = require "lsp.dap.dap-scala"
-
--- dap.configurations.scala = dap_scala.dap
-

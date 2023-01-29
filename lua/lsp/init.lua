@@ -1,5 +1,5 @@
 require("lsp.mason")
-require("lsp.metals")
+require("lsp.scala")
 require("lsp.rust")
 require("lsp.flutter")
 require("lsp.python")
