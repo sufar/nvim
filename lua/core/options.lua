@@ -60,3 +60,10 @@ vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 -- vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 vim.cmd [[set guifont="JetBrains MonoNerd Font:h3" ]]
+
+-- visual code open current file or current project
+vim.cmd [[command! -nargs=0 CodeFile execute ":!code " . getcwd() . " -g %:p\:" . line(".") . ":" . col(".")]]
+vim.cmd [[command! -nargs=0 Code execute ":!code " . getcwd()]]
+
+-- intellij idea open current file
+vim.cmd [[command! -nargs=0 Idea execute ":!intellij-idea-ultimate-edition %:p"]]
