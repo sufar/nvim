@@ -55,6 +55,7 @@ vim.cmd('autocmd Filetype css setlocal ts=2 sw=2 expandtab')
 vim.cmd('autocmd Filetype html setlocal ts=2 sw=2 expandtab')
 vim.cmd('autocmd Filetype xml setlocal ts=2 sw=2 expandtab')
 vim.cmd('autocmd Filetype yaml setlocal ts=2 sw=2 expandtab')
+vim.cmd('autocmd Filetype java setlocal ts=4 sw=4 expandtab')
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]

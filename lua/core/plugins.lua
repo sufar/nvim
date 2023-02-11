@@ -73,9 +73,7 @@ return require('packer').startup(function(use)
   use({ 'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" } })
 
   -- rust
-  use { "simrat39/rust-tools.nvim" , 
-    commit ="df584e84393ef255f5b8cbd709677d6a3a5bf42f"
-  }
+  use { "simrat39/rust-tools.nvim" }
   use "saecki/crates.nvim"
 
   -- sql
@@ -177,6 +175,35 @@ return require('packer').startup(function(use)
 
   -- sniprun
   use "michaelb/sniprun"
+
+  -- bookmark
+  use "MattesGroeger/vim-bookmarks"
+  use "tom-anders/telescope-vim-bookmarks.nvim"
+
+  -- Distraction-free coding
+  use "folke/zen-mode.nvim"
+  use "folke/twilight.nvim"
+
+  -- Neovim plugin to improve the default vim.ui interfaces 
+  -- use "stevearc/dressing.nvim"
+
+  use({
+  "utilyre/barbecue.nvim",
+  tag = "*",
+  requires = {
+    "SmiteshP/nvim-navic",
+    "nvim-tree/nvim-web-devicons", -- optional dependency
+  },
+  after = "nvim-web-devicons", -- keep this if you're using NvChad
+  config = function()
+    require("barbecue").setup()
+  end,
+})
+
+  -- Automatic indentation style detection for Neovim
+  use "NMAC427/guess-indent.nvim"
+
+  use "ellisonleao/glow.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

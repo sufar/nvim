@@ -23,7 +23,4 @@ require "core.fidget"
 require "core.diffview-nvim"
 require "lsp"
 require "lsp.golang"
---[[ require "lsp.dap" ]]
---[[ require "tools" ]]
--- require "lsp.debug.dap-rust"
--- require "lsp.debug.dap-flutter"
+require "tools"

@@ -179,3 +179,19 @@ local config = {
   on_attach = on_attach,
 }
 require('jdtls').start_or_attach(config)
+--[[ local dap = require("dap") ]]
+--[[ dap.configurations.java = { ]]
+--[[           { ]]
+--[[               type = "java", ]]
+--[[               request = "launch", ]]
+--[[               name = "Launch Java" ]]
+--[[           }, ]]
+--[[           { ]]
+--[[               type = "cppdbg", ]]
+--[[               request = "launch", ]]
+--[[               name = "Launch CPP" ]]
+--[[           } ]]
+--[[         } ]]
+--[[]]
+--[[ local root_dir = require('jdtls.setup').find_root({'pom.xml'}) ]]
+--[[ vim.notify(root_dir) ]]

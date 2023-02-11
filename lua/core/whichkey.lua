@@ -147,6 +147,9 @@ local leader_mappings = {
   ["F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" }, -- theme=ivy
   ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
   ["E"] = { "<cmd>NvimTreeFindFile<cr>", "Find File" },
+  ["r"] = { "<cmd>Telescope oldfiles <CR>", "Recent Files"},
+  ["z"] = { "<cmd>ZenMode<cr>", "Zen Mode"},
+  ["Z"] = { "<cmd>Twilight<cr>", "Twilight"},
 
   d = {
     name = "Debug",
