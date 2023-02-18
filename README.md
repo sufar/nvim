@@ -1,6 +1,9 @@
 Rust golang java scala vue flutter's neovim development environment configurations
 
 ## dependency
+
+archlinux:
+
 ```shell
 sudo pacman -S xsel
 sudo pacman -S lazygit
@@ -14,6 +17,13 @@ yay -S sniprun
 pip install neovim
 ```
 
+windows:
+
+```shell
+scoop install ripgrep
+scoop install gcc
+```
+
 ## rust
 
 Please don't use mason install `rust-analyzer` and `codelldb`
@@ -21,6 +31,10 @@ Please don't use mason install `rust-analyzer` and `codelldb`
 ## java
 
 In neovim exec `:MasonInstall jdtls` and `:MasonInstall java-test` and `:MasonInstall java-debug-adapter`
+
+Set system environment `JAVA8_HOME` and `JAVA11_HOME`
+
+Set `JAVA_HOME` to jdk17
 
 ## python
 

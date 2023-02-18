@@ -1,4 +1,9 @@
-require('go').setup({
+local go, ok = require("go")
+if not ok then
+  return
+end
+
+go.setup({
   fillstruct = 'gopls',
   dap_debug = true,
   dap_debug_gui = true,

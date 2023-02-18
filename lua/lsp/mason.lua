@@ -6,6 +6,14 @@ require("mason-lspconfig").setup_handlers {
     require("lspconfig")[server_name].setup {}
   end,
   ["jdtls"] = function()
+    vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "java" },
+    callback = function()
+      local java_config = require("lsp.java")
+      require('jdtls').start_or_attach(java_config)
+      end,
+      group = vim.api.nvim_create_augroup("jdtls", { clear = true })
+    })
   end,
   ["sqls"] = function()
     require('lspconfig').sqls.setup {
