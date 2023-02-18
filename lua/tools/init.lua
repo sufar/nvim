@@ -6,6 +6,8 @@ require "tools.zen-mode"
 require "tools.dressing"
 require "tools.guess-indent"
 require "tools.markdown"
+require "tools.dailynotes"
+require "tools.line-notes"
 -- require("tools.todo")
 -- require "tools.colorizer"
 -- require "tools.flutter"

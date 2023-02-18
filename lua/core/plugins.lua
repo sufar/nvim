@@ -179,6 +179,7 @@ return require('packer').startup(function(use)
   -- bookmark
   use "MattesGroeger/vim-bookmarks"
   use "tom-anders/telescope-vim-bookmarks.nvim"
+  use "kristijanhusak/line-notes.nvim"
 
   -- Distraction-free coding
   use "folke/zen-mode.nvim"
@@ -204,6 +205,8 @@ return require('packer').startup(function(use)
   use "NMAC427/guess-indent.nvim"
 
   use "ellisonleao/glow.nvim"
+
+  use "kperath/dailynotes.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

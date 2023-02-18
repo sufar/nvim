@@ -63,10 +63,8 @@ local bundles = {
 vim.list_extend(bundles,
   vim.split(vim.fn.glob(mason_home .. "packages" .. os_sep .. "java-test" .. os_sep .. "extension" .. os_sep .. "server" .. os_sep .. "*.jar", 1), "\n"))
 
-local config = {
-  --[[ cmd = { mason_home .. "packages" ..os_sep .. "jdtls" .. os_sep .. "bin" .. os_sep .. "jdtls", " -data ", workspace_dir, ]]
-    --[[ " -javaagent:" .. mason_home .. "packages" .. os_sep .. "jdtls" .. os_sep .. "lombok.jar" }, ]]
-
+local cmd = nil
+if is_windows then
   cmd = {
     os.getenv("JAVA_HOME") .. os_sep .. "bin" .. os_sep .. "java",
     '-Declipse.application=org.eclipse.jdt.ls.core.id1',
@@ -76,6 +74,7 @@ local config = {
     '-Dlog.level=ALL',
     '-Xms1g',
     '-Xmx3g',
+    '-javaagent:' .. mason_home .. "packages" .. os_sep .. "jdtls" .. os_sep .. "lombok.jar",
     '--add-modules=ALL-SYSTEM',
     '--add-opens', 'java.base/java.util=ALL-UNNAMED',
     '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
@@ -85,7 +84,15 @@ local config = {
     jdtls_home .. os_sep .. config_path,
     '-data',
     workspace_dir
-  },
+  }
+else
+  cmd = { mason_home .. "packages" ..os_sep .. "jdtls" .. os_sep .. "bin" .. os_sep .. "jdtls", " -data ", workspace_dir,
+    " -javaagent:" .. mason_home .. "packages" .. os_sep .. "jdtls" .. os_sep .. "lombok.jar" }
+end
+
+
+local config = {
+  cmd = cmd,
   root_dir = vim.fs.dirname(vim.fs.find({ '.gradlew', '.git', 'mvnw', 'pom.xml' }, { upward = true })[1]),
   settings = {
     configuration = {
