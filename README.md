@@ -26,7 +26,7 @@ scoop install gcc
 
 ## rust
 
-Please don't use mason install `rust-analyzer` and `codelldb`
+In neovim exec `:MasonInstall rust-analyzer` and `:MasonInstall codelldb`
 
 ## java
 
