@@ -78,6 +78,14 @@ debug test: when cursor in test function, nvim exec `:GoDebug -t`
 
 [scalameta/nvim-metals](https://github.com/scalameta/nvim-metals)
 
+[Install coursier and add cs to PATH](https://get-coursier.io/docs/cli-installation)
+
+```
+curl -fL "https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz" | gzip -d > cs
+```
+
+In neovim exec `:MetalsInstall`
+
 ## vue
 
 In neovim exec `:MasonInstall vue-language-server`, which will install volar.

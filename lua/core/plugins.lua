@@ -204,8 +204,6 @@ return require('packer').startup(function(use)
   -- Automatic indentation style detection for Neovim
   use "NMAC427/guess-indent.nvim"
 
-  use "ellisonleao/glow.nvim"
-
   use "kperath/dailynotes.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim

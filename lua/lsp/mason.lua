@@ -24,13 +24,8 @@ require("mason-lspconfig").setup_handlers {
     }
   end,
   ["rust_analyzer"] = function()
-    require("rust-tools").setup({
-      dap = {
-        adapter = require('rust-tools.dap').get_codelldb_adapter(
-          mason_home .. "/packages/codelldb/extension/adapter/codelldb",
-          mason_home .. "/packages/codelldb/extension/lldb/lib/liblldb.so")
-      }
-    })
+    local config = require("lsp.rust")
+    require("rust-tools").setup(config)
     require('crates').setup()
   end,
 }
