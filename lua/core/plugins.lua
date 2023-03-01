@@ -77,7 +77,11 @@ return require('packer').startup(function(use)
   use "saecki/crates.nvim"
 
   -- sql
-  use "nanotee/sqls.nvim"
+  -- use "nanotee/sqls.nvim"
+  use "tpope/vim-dadbod"
+  use "kristijanhusak/vim-dadbod-ui"
+  -- use "Xemptuous/sqlua.nvim"
+  use "kristijanhusak/vim-dadbod-completion"
 
   -- json
   use "b0o/schemastore.nvim"

@@ -104,11 +104,20 @@ In neovim exec `:MasonInstall yaml-language-server`
 
 ## sql
 
-In neovim exec `:MasonInstall sqls` and `:MasonInstall sqlls`
+[vim-dadbod](https://github.com/tpope/vim-dadbod)
 
-[nanotee/sqls.nvim](https://github.com/nanotee/sqls.nvim)
+[vim-dadbod-ui](https://github.com/kristijanhusak/vim-dadbod-ui)
 
-Connection configuration file: `~/.config/sqls/config.yml`
+[vim-dadbod-completion](https://github.com/kristijanhusak/vim-dadbod-completion)
+
+### mysql
+
+Download the [mysql client](https://cdn.mysql.com//Downloads/MySQL-8.0/mysql-8.0.32-linux-glibc2.17-x86_64-minimal.tar.xz) and put the `mysql` to PATH
+
+```
+sudo pacman -S ncurses
+sudo pacman -S ncurses5-compat-libs
+```
 
 ## toml
 
