@@ -110,6 +110,23 @@ In neovim exec `:MasonInstall yaml-language-server`
 
 [vim-dadbod-completion](https://github.com/kristijanhusak/vim-dadbod-completion)
 
+### add connections
+
+```
+mkdir ~/.local/share/db_ui
+```
+
+> vim ~/.local/share/db_ui/connections.json
+
+```
+[
+  {
+    "name": "localhost",
+    "url": "mysql://root:zugle@127.0.0.1"
+  }
+]
+```
+
 ### mysql
 
 Download the [mysql client](https://cdn.mysql.com//Downloads/MySQL-8.0/mysql-8.0.32-linux-glibc2.17-x86_64-minimal.tar.xz) and put the `mysql` to PATH
