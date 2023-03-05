@@ -126,6 +126,7 @@ return require('packer').startup(function(use)
   -- mason
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
+  use "jay-babu/mason-nvim-dap.nvim"
 
   --  use "arkav/lualine-lsp-progress"
   --  use "nvim-lua/lsp-status.nvim"
@@ -209,6 +210,9 @@ return require('packer').startup(function(use)
   use "NMAC427/guess-indent.nvim"
 
   use "kperath/dailynotes.nvim"
+
+  -- Neovim setup for init.lua and plugin development with full signature help, docs and completion for the nvim lua API.
+  use "folke/neodev.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

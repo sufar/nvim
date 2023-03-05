@@ -26,7 +26,7 @@ require("dapui").setup({
         { id = "watches", size = 00.25 },
       },
       size = 40,
-      position = "left", -- Can be "left", "right", "top", "bottom"
+      position = "right", -- Can be "left", "right", "top", "bottom"
     },
     {
       elements = { "repl" },
@@ -58,3 +58,8 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close()
 end
+
+--[[ dap.defaults.fallback.external_terminal = { ]]
+--[[   command = '/usr/bin/alacritty'; ]]
+--[[   args = {'-e'}; ]]
+--[[ } ]]

@@ -36,6 +36,15 @@ Set system environment `JAVA8_HOME` and `JAVA11_HOME`
 
 Set `JAVA_HOME` to jdk17
 
+## gradle
+
+In neovim exec `:MasonInstall gradle-language-server`
+
+In your gradle project
+```
+./gradlew buildEnvironment
+```
+
 ## python
 
 In neovim exec `:MasonInstall pyright` and don't install the debugpy
