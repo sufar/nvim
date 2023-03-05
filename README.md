@@ -24,6 +24,10 @@ scoop install ripgrep
 scoop install gcc
 ```
 
+## First of all
+
+In neovim exec: `:PackerUpdate`
+
 ## rust
 
 In neovim exec `:MasonInstall rust-analyzer` and `:MasonInstall codelldb`
