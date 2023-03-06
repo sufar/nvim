@@ -56,6 +56,7 @@ end
 
 local extendedClientCapabilities = require 'jdtls'.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
+extendedClientCapabilities.onCompletionItemSelectedCommand = "editor.action.triggerParameterHints"
 local bundles = {
   vim.fn.glob(mason_home .. "packages" .. os_sep .. "java-debug-adapter" .. os_sep .. "extension" .. os_sep .. "server" .. os_sep .. "com.microsoft.java.debug.plugin-*.jar"
     , 1),
@@ -116,6 +117,7 @@ local config = {
       },
       completion = {
         favoriteStaticMembers = {
+          "io.crate.testing.Asserts.assertThat",
           "org.junit.Assert.*",
           "org.junit.Assume.*",
           "org.junit.jupiter.api.Assertions.*",
@@ -125,7 +127,6 @@ local config = {
           "org.hamcrest.MatcherAssert.assertThat",
           "org.hamcrest.Matchers.*",
           "org.hamcrest.CoreMatchers.*",
-          "org.junit.jupiter.api.Assertions.*",
           "java.util.Objects.requireNonNull",
           "java.util.Objects.requireNonNullElse",
           "org.mockito.Mockito.*"
