@@ -14,7 +14,13 @@ builtin.lualine = {
     lualine_a = nil,
     lualine_b = nil,
     lualine_c = nil,
-    lualine_x = nil,
+    lualine_x = {
+      {
+        require("lazy.status").updates,
+        cond = require("lazy.status").has_updates,
+        color = { fg = "#ff9e64" },
+      },
+    },
     lualine_y = nil,
     lualine_z = nil,
   },

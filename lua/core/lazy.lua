@@ -84,7 +84,7 @@ local plugins = {
 
   {
     "numToStr/Comment.nvim",
-    event = { "UIEnter" },
+    lazy = true
   },
 
   {
@@ -109,7 +109,8 @@ local plugins = {
       { 'nvim-lua/plenary.nvim' },
       { 'nvim-telescope/telescope-media-files.nvim' },
       { 'nvim-telescope/telescope-ui-select.nvim' },
-    }
+    },
+    lazy = true
   },
   {
     -- Highlight, edit, and navigate code
@@ -119,7 +120,7 @@ local plugins = {
       { "nvim-lua/plenary.nvim" },
     },
     build = ":TSUpdate",
-    event = { "UIEnter" },
+    lazy = true
   },
 
   {
@@ -131,7 +132,8 @@ local plugins = {
     'sindrets/diffview.nvim',
     dependencies = {
       { 'nvim-lua/plenary.nvim' }
-    }
+    },
+    lazy = true
   },
 
   -------------------------------- dap -----------------------------
@@ -143,7 +145,7 @@ local plugins = {
       { "rcarriga/nvim-dap-ui" },
       { "theHamsta/nvim-dap-virtual-text" },
     },
-    event = { "UIEnter" },
+    event = { "LspAttach" },
   },
 
   ------------------------------- lsp ------------------------------
@@ -158,6 +160,7 @@ local plugins = {
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
     },
+    lazy = true
   },
 
   {
@@ -170,7 +173,7 @@ local plugins = {
     dependencies = {
       { "nvim-lua/plenary.nvim" },
     },
-    event = { "UIEnter" },
+    lazy = true
   },
 
   {
@@ -190,7 +193,8 @@ local plugins = {
     'akinsho/flutter-tools.nvim',
     dependencies = {
       { 'nvim-lua/plenary.nvim' }
-    }
+    },
+    lazy = true
   },
   {
     'ray-x/go.nvim',
@@ -199,13 +203,14 @@ local plugins = {
         'ray-x/guihua.lua',
         build = 'cd lua/fzy && make'
       } -- recommended if need floating window support
-    }
+    },
+    lazy = true
   },
 
   -------------------------------- tools ----------------------------
   {
     "windwp/nvim-autopairs",
-    event = { "UIEnter" },
+    lazy = true
   },
 
   -- zen mode
@@ -214,21 +219,21 @@ local plugins = {
     dependencies = {
       { "folke/twilight.nvim" },
     },
-    event = { "UIEnter" },
+    lazy = true,
   },
 
   -- bookmark
   {
     "MattesGroeger/vim-bookmarks",
-    event = { "UIEnter" },
+    lazy = true,
   },
   {
     "tom-anders/telescope-vim-bookmarks.nvim",
-    event = { "UIEnter" },
+    lazy = true,
   },
   {
     "kristijanhusak/line-notes.nvim",
-    event = { "UIEnter" },
+    lazy = true,
   },
 
 
@@ -272,6 +277,7 @@ local plugins = {
     config = function()
       require("barbecue").setup()
     end,
+    lazy = true,
   },
 
   {
@@ -280,4 +286,12 @@ local plugins = {
   }
 }
 
-require("lazy").setup(plugins, {})
+local opts = {
+  checker = {
+    -- automatically check for plugin updates
+    enabled = true,
+    notify = false, -- get a notification when new updates are found
+  }
+}
+
+require("lazy").setup(plugins, opts)
