@@ -133,10 +133,9 @@ local leader_mappings = {
   --[[ }, ]]
   ["e"] = { ":NvimTreeToggle<cr>", "Explorer" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
-  --[[ ["q"] = { "<cmd>q!<CR>", "Quit" }, ]]
-  ["q"] = { "<cmd>cpnfirm q<CR>", "Quit" },
-  ["c"] = { "<cmd>Bdelete<CR>", "Close Buffer" },
-  ["C"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+  ["q"] = { "<cmd>q!<CR>", "Quit" },
+  ["c"] = { "<cmd>bdelete<CR>", "Close Buffer" },
+  ["C"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
   --  ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["h"] = { "<cmd>AerialToggle!<CR>", "Aerial Toggle" },
   ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
