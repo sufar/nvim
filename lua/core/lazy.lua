@@ -136,6 +136,18 @@ local plugins = {
     lazy = true
   },
 
+  {
+    "utilyre/barbecue.nvim",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    config = function()
+      require("barbecue").setup()
+    end,
+    event = { "UIEnter" },
+  },
+
   -------------------------------- dap -----------------------------
 
   {
@@ -266,18 +278,6 @@ local plugins = {
   {
     "norcalli/nvim-colorizer.lua",
     lazy = true
-  },
-
-  {
-    "utilyre/barbecue.nvim",
-    dependencies = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons", -- optional dependency
-    },
-    config = function()
-      require("barbecue").setup()
-    end,
-    lazy = true,
   },
 
   {
