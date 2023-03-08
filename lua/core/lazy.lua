@@ -84,7 +84,12 @@ local plugins = {
 
   {
     "numToStr/Comment.nvim",
-    lazy = true
+    event = { "VeryLazy" },
+  },
+
+  {
+    "mg979/vim-visual-multi",
+    event = { "VeryLazy" },
   },
 
   {
@@ -146,6 +151,20 @@ local plugins = {
       require("barbecue").setup()
     end,
     event = { "UIEnter" },
+  },
+
+  -- highlighting other uses of the current word under the cursor
+  {
+    "RRethy/vim-illuminate",
+    event = { "UIEnter" },
+  },
+
+  {
+    "folke/todo-comments.nvim",
+    event = { "UIEnter" },
+    config = function()
+      require('todo-comments').setup()
+    end
   },
 
   -------------------------------- dap -----------------------------
@@ -222,7 +241,7 @@ local plugins = {
   -------------------------------- tools ----------------------------
   {
     "windwp/nvim-autopairs",
-    lazy = true
+    event = { "InsertEnter" },
   },
 
   -- zen mode
@@ -237,7 +256,7 @@ local plugins = {
   -- bookmark
   {
     "MattesGroeger/vim-bookmarks",
-    lazy = true,
+    event = { "UIEnter" },
   },
   {
     "tom-anders/telescope-vim-bookmarks.nvim",
@@ -247,7 +266,6 @@ local plugins = {
     "kristijanhusak/line-notes.nvim",
     lazy = true,
   },
-
 
   -- sql
   {
@@ -271,18 +289,38 @@ local plugins = {
   -- rest
   {
     "NTBBloodbath/rest.nvim",
-    lazy = true
+    event = {"VeryLazy"},
   },
 
   -- colorizer
   {
     "norcalli/nvim-colorizer.lua",
-    lazy = true
+    event = {"VeryLazy"},
   },
 
   {
     "kperath/dailynotes.nvim",
-    lazy = true
+    event = {"VeryLazy"},
+  },
+
+  -- sudo pacman -S lazygit
+  {
+    "kdheepak/lazygit.nvim",
+    event = {"VeryLazy"},
+  },
+
+  {
+    "phaazon/hop.nvim",
+    event = {"VeryLazy"},
+  },
+
+  {
+    "uga-rosa/translate.nvim",
+    event = {"VeryLazy"},
+  },
+
+  {
+    "kristijanhusak/vim-carbon-now-sh"
   }
 }
 

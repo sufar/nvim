@@ -26,7 +26,7 @@ scoop install gcc
 
 ## First of all
 
-In neovim exec: `:PackerUpdate`
+In neovim exec: `:Lazy` and `U`
 
 ## rust
 
