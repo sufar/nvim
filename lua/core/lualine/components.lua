@@ -66,6 +66,13 @@ return {
     color = { fg = colors.green },
     cond = conditions.hide_in_width,
   },
+  lazy = {
+    function ()
+      return require("lazy.status").updates()
+    end,
+    cond = require("lazy.status").has_updates,
+    color = { fg = "#ff9e64" },
+  },
   diagnostics = {
     "diagnostics",
     sources = { "nvim_diagnostic" },

@@ -88,6 +88,7 @@ styles.zugle = {
       components.python_env,
     },
     lualine_x = {
+      components.lazy,
       components.diagnostics,
       components.treesitter,
       components.lsp,
