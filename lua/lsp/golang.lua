@@ -13,4 +13,5 @@ go.setup({
   lsp_keymaps = false,
 })
 
+vim.notify("golang")
 --[[ require('dap-go').setup() ]]

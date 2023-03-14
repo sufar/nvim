@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 configs.setup {
-  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = {"c", "lua", "java", "bash", "cmake", "cpp", "css", "cuda", "dart", "gitignore", "go", "gosum", "gomod", "html", "http", "ini", "javascript", "jsdoc", "json", "kotlin", "latex", "llvm", "make", "markdown", "ninja", "python", "proto", "regex", "rust", "scala", "scheme", "scss", "sql", "thrift", "toml", "typescript", "vim", "vue", "yaml", "zig", "wgsl"}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "ron", "capnp", "func" }, -- List of parsers to ignore installing
   autopairs = {
