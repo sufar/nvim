@@ -70,14 +70,16 @@ return {
     function ()
       return require("lazy.status").updates()
     end,
-    cond = require("lazy.status").has_updates,
+    -- cond = require("lazy.status").has_updates,
     color = { fg = "#ff9e64" },
+    cond = conditions.hide_in_width,
   },
   diagnostics = {
     "diagnostics",
     sources = { "nvim_diagnostic" },
     symbols = { error = " ", warn = " ", info = " ", hint = " " },
-    cond = conditions.hide_in_width,
+    -- cond = conditions.hide_in_width,
+    cond = nil,
   },
   treesitter = {
     function()
