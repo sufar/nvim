@@ -252,7 +252,7 @@ local plugins = {
       require("go").setup({
         fillstruct = 'gopls',
         dap_debug = true,
-        dap_debug_gui = true,
+        dap_debug_gui = false,
         lsp_cfg = true,
         icons = false,
         dap_debug_keymap = false,

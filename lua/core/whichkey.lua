@@ -193,6 +193,7 @@ local leader_mappings = {
     D = { "<cmd>DBUIToggle<CR>", "Database" },
     p = { "<cmd>Glow<cr>", "Markdown Preview" },
     i = { "<cmd>PasteImg<cr>", "Paste Image" },
+    T = { "<cmd>TroubleToggle<cr>", "Trouble"},
     d = {
       name = "Daily Notes",
       d = { "<cmd>Daily<cr>", "Lazy" },
