@@ -249,7 +249,15 @@ local plugins = {
       "nvim-treesitter/nvim-treesitter",
     },
     config = function()
-      require("go").setup()
+      require("go").setup({
+        fillstruct = 'gopls',
+        dap_debug = true,
+        dap_debug_gui = true,
+        lsp_cfg = true,
+        icons = false,
+        dap_debug_keymap = false,
+        lsp_keymaps = false,
+      })
     end,
     event = { "CmdlineEnter" },
     ft = { "go", 'gomod' },
