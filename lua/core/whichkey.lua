@@ -86,7 +86,7 @@ WHICHKEY_CONFIG.g_nmappings = {
       ["d"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go To Definition" },
       ["D"] = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Go To Declaration" },
       ["r"] = { "<cmd>lua vim.lsp.buf.references()<CR>", "Go To References" },
-      ["I"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go To Implementation" },
+      ["i"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go To Implementation" },
       ["s"] = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "show signature help" },
       ["l"] = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Show line diagnostics" },
       ["f"] = { "<cmd>lua vim.lsp.buf.format { async = true }<CR>", "Formatting" },
