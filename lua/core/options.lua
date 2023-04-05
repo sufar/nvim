@@ -68,3 +68,6 @@ vim.cmd [[command! -nargs=0 Code execute ":!code " . getcwd()]]
 
 -- intellij idea open current file
 vim.cmd [[command! -nargs=0 Idea execute ":!intellij-idea-ultimate-edition %:p"]]
+
+-- support *.slint file
+vim.cmd('autocmd BufEnter *.slint :setlocal filetype=slint')
