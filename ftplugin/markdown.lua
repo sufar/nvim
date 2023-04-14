@@ -1,19 +1,22 @@
 -- whick-key bind.
 local status_ok, which_key = pcall(require, "which-key")
 if status_ok then
-  local f_nopts = {
+  local opts = {
     mode = "n",
-    prefix = "f",
+    prefix = "<leader>",
     buffer = nil,
     silent = true,
     noremap = true,
     nowait = true,
   }
 
-  local f_nmappings = {
-    ["p"] = { "<cmd>Glow<cr>", "Markdown Preview" },
-    ["c"] = { "<cmd>Glow!<cr>", "Close Preview" },
+  local mappings = {
+    C = {
+      name = "Markdown",
+      p = { "<cmd>Glow<cr>", "Markdown Preview" },
+      c = { "<cmd>Glow!<cr>", "Close Preview" },
+    }
   }
 
-  which_key.register(f_nmappings, f_nopts)
+  which_key.register(mappings, opts)
 end

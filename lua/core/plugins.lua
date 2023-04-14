@@ -192,6 +192,10 @@ local plugins = {
     event = { "LspAttach" },
   },
 
+  {
+    "mfussenegger/nvim-dap-python"
+  },
+
   ------------------------------- lsp ------------------------------
   {
     -- LSP Configuration & Plugins
