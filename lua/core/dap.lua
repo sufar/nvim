@@ -1,3 +1,30 @@
+local M = {}
+
+M.config = {
+  breakpoint = {
+    text = "",
+    texthl = "DiagnosticSignHint",
+    linehl = "",
+    numhl = "",
+  },
+  breakpoint_rejected = {
+    text = "",
+    texthl = "DiagnosticSignError",
+    linehl = "",
+    numhl = "",
+  },
+  stopped = {
+    text = "",
+    texthl = "DiagnosticSignWarn",
+    linehl = "Visual",
+    numhl = "DiagnosticSignWarn",
+  },
+}
+
+vim.fn.sign_define("DapBreakpoint", M.config.breakpoint)
+vim.fn.sign_define("DapBreakpointRejected", M.config.breakpoint_rejected)
+vim.fn.sign_define("DapStopped", M.config.stopped)
+
 require("dapui").setup({
   icons = { expanded = "▾", collapsed = "▸" },
   mappings = {
@@ -22,8 +49,8 @@ require("dapui").setup({
           size = 0.25, -- Can be float or integer > 1
         },
         { id = "breakpoints", size = 0.25 },
-        { id = "stacks", size = 0.25 },
-        { id = "watches", size = 00.25 },
+        { id = "stacks",      size = 0.25 },
+        { id = "watches",     size = 00.25 },
       },
       size = 40,
       position = "right", -- Can be "left", "right", "top", "bottom"
@@ -35,8 +62,8 @@ require("dapui").setup({
     },
   },
   floating = {
-    max_height = nil, -- These can be integers or a float between 0 and 1.
-    max_width = nil, -- Floats will be treated as percentage of your screen.
+    max_height = nil,  -- These can be integers or a float between 0 and 1.
+    max_width = nil,   -- Floats will be treated as percentage of your screen.
     border = "single", -- Border style. Can be "single", "double" or "rounded"
     mappings = {
       close = { "q", "<Esc>" },
