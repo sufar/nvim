@@ -190,6 +190,11 @@ local plugins = {
     event = { "UIEnter" }
   },
 
+  {
+    "stevearc/aerial.nvim",
+    lazy = true,
+  },
+
   -------------------------------- dap -----------------------------
 
   {
