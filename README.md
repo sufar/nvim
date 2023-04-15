@@ -1,5 +1,7 @@
 Rust golang java scala vue flutter's neovim development environment configurations
 
+![image](https://user-images.githubusercontent.com/82210712/232181237-861f29a0-243e-497e-be63-949f4a404882.png)
+
 ## dependency
 
 archlinux:
@@ -32,6 +34,8 @@ In neovim exec: `:Lazy` and `U`
 
 In neovim exec `:MasonInstall rust-analyzer` and `:MasonInstall codelldb`
 
+![image](https://user-images.githubusercontent.com/82210712/232181189-40bea576-8e47-40ba-833e-8daf97c63c61.png)
+
 ## java
 
 In neovim exec `:MasonInstall jdtls` and `:MasonInstall java-test` and `:MasonInstall java-debug-adapter`
@@ -39,6 +43,8 @@ In neovim exec `:MasonInstall jdtls` and `:MasonInstall java-test` and `:MasonIn
 Set system environment `JAVA8_HOME` and `JAVA11_HOME`
 
 Set `JAVA_HOME` to jdk17
+
+![image](https://user-images.githubusercontent.com/82210712/232179334-a52bbb89-c412-4567-9a61-d983c94ff8fa.png)
 
 ## gradle
 
