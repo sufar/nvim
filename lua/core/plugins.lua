@@ -227,6 +227,11 @@ local plugins = {
   },
 
   {
+    "jose-elias-alvarez/null-ls.nvim",
+    lazy = true
+  },
+
+  {
     "j-hui/fidget.nvim",
     event = { "LspAttach" },
   },
@@ -241,10 +246,27 @@ local plugins = {
 
   {
     "simrat39/rust-tools.nvim",
-    dependencies = {
-      { "saecki/crates.nvim" }
-    },
     lazy = true
+  },
+
+  {
+    "saecki/crates.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("crates").setup {
+        null_ls = {
+          enabled = true,
+          name = "crates.nvim",
+        },
+      }
+    end,
+    lazy = true,
+  },
+
+  -- json yaml
+  {
+    "b0o/schemastore.nvim",
+    lazy = true,
   },
 
   {
