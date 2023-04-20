@@ -1,4 +1,19 @@
-require 'lspconfig'.pyright.setup {}
+require 'lspconfig'.pyright.setup {
+  cmd = { "pyright-langserver", "--stdio" },
+  single_file_support = true,
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        diagnosticMode = "workspace",
+        useLibraryCodeForTypes = true
+      }
+    }
+  },
+  root_dir = require('lspconfig').util.root_pattern(".git"),
+  filetypes = { "python" }
+}
+
 
 -- Setup dap for python
 local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
