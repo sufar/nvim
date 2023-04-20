@@ -57,6 +57,8 @@ In your gradle project
 
 ## python
 
+Install nodejs
+
 In neovim exec `:MasonInstall pyright` and don't install the debugpy
 
 ```

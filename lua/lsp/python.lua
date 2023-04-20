@@ -1,3 +1,5 @@
+require 'lspconfig'.pyright.setup {}
+
 -- Setup dap for python
 local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
 pcall(function()

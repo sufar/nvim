@@ -1,20 +1,32 @@
-local utils = {}
+local M = {}
 local Path = require "plenary.path"
 
-utils.get_separator = function()
+M.get_separator = function()
   return Path.path.sep
 end
 
-utils.get_mason_home = function ()
-  return vim.fn.stdpath "data" .. utils.get_separator() .. "mason" .. utils.get_separator()
+M.get_mason_home = function()
+  return vim.fn.stdpath "data" .. M.get_separator() .. "mason" .. M.get_separator()
 end
 
-utils.get_home = function ()
-  return Path.path.home .. utils.get_separator()
+M.get_home = function()
+  return Path.path.home .. M.get_separator()
 end
 
-utils.is_windows = function ()
+M.is_windows = function()
   return vim.loop.os_uname().version:match('Windows')
 end
 
-return utils
+function M.is_lsp_installed(name)
+  local _, clients = pcall(function()
+    return require("mason-lspconfig").get_installed_servers()
+  end)
+  for _, client in ipairs(clients) do
+    if client == name then
+      return true
+    end
+  end
+  return false
+end
+
+return M

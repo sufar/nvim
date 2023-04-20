@@ -53,6 +53,14 @@ require("mason-lspconfig").setup_handlers {
   jsonls = function()
     require('lsp.jsonls').setup()
   end,
+
+  gopls = function()
+    require("lsp.go")
+  end,
+
+  pyright = function()
+    require("lsp.python")
+  end,
 }
 
 -- require("mason-nvim-dap").setup({
