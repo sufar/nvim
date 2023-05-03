@@ -180,6 +180,11 @@ sudo pacman -S shellcheck
 
 In neovim exec `:MasonInstall css-lsp`
 
+for sass
+    ```
+    npm install sass --save-dev
+    ```
+
 ## html
 
 In neovim exec `:MasonInstall html-lsp`
