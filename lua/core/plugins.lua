@@ -12,28 +12,36 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+-------------------------------------- colorscheme -----------------------------------
   {
     "sainnhe/edge",
     lazy = false,    -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
-    -- config = function()
-      -- vim.cmd([[
-      --   set background=dark
-      --   colorscheme edge
-      -- ]])
-    -- end,
   },
 
   {
-    "joshdick/onedark.vim",
+    'dracula/vim',
+    priority = 1000,
+    name = 'dracula',
+  },
+
+  {
+    "olimorris/onedarkpro.nvim",
     priority = 1000,
     config = function()
-      vim.cmd([[
-        set background=dark
-        colorscheme onedark
-      ]])
+      require("onedarkpro").setup({
+        options = {
+          cursorline = true,
+          -- transparency = true
+        },
+        plugins = {
+          nvim_tree = false,
+        },
+      })
     end
   },
+
+-------------------------------------- core plugins ---------------------------------
 
   -- I have a separate config.mappings file where I require which-key.
   -- With lazy the plugin will be automatically loaded when it is required somewhere
@@ -208,7 +216,8 @@ local plugins = {
   },
 
   {
-    "mfussenegger/nvim-dap-python"
+    "mfussenegger/nvim-dap-python",
+    lazy = true,
   },
 
   ------------------------------- lsp ------------------------------
