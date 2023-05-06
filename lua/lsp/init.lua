@@ -1,3 +1,4 @@
+require("lsp.handlers")
 require("lsp.mason")
 require("lsp.scala")
 require("lsp.flutter")
