@@ -1,14 +1,21 @@
--- onedark
-vim.cmd([[
-  set background=dark
-  colorscheme onedark
-]])
+-- https://vimcolorschemes.com/
 
--- edge
--- vim.cmd([[
---   set background=dark
---   colorscheme edge
--- ]])
+-------------------------------onedark----------------------------------
+-- onedark
+-- vim.cmd([[colorscheme onedark]])
+-- vim.cmd([[colorscheme onelight]])
+
+-------------------------------edge--------------------------------------
+-- edge: https://github.com/sainnhe/edge/blob/master/doc/edge.txt
+-- transparent mode
+vim.cmd([[let g:edge_transparent_background = 1]])
+vim.cmd([[let g:edge_current_word='underline']])
+
+-- light mode
+-- vim.cmd("set background=light")
+
+vim.cmd.colorscheme("edge")
+-------------------------------------------------------------------------
 
 -- dracula
 -- vim.cmd([[

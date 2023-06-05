@@ -71,3 +71,4 @@ keymap("n", "<F8>", ":lua require'dap'.step_out()<CR>", opts)
 --vim.cmd([[
 --nnoremap <silent> <space>dr :lua require("dapui").float_element(vim.Nil, { enter = true}) <CR>
 --]])
+keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)

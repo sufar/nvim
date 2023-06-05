@@ -61,6 +61,11 @@ require("mason-lspconfig").setup_handlers {
   pyright = function()
     require("lsp.python")
   end,
+
+  -- volar = function ()
+  --   vim.notify("volar init...")
+  --   require("lsp.vue")
+  -- end
 }
 
 -- require("mason-nvim-dap").setup({

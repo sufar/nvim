@@ -125,7 +125,7 @@ local leader_opts = {
 local leader_mappings = {
       ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
   --["/"] = { "<cmd>lua require(\"Comment.api\").toggle_current_linewise()<CR>", "Comment" },
-      [";"] = { "<cmd>Alpha<cr>", "Alpha" },
+      ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   --[[ ["b"] = { ]]
   --[[   "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", ]]
   --[[   "Buffers", ]]
@@ -141,6 +141,7 @@ local leader_mappings = {
       ["E"] = { "<cmd>NvimTreeFindFile<cr>", "Find File" },
       ["z"] = { "<cmd>ZenMode<cr>", "Zen Mode" },
       ["Z"] = { "<cmd>Twilight<cr>", "Twilight" },
+      ["v"] = { "<cmd>vsplit<cr>", "vsplit" },
   b = {
     name = "Buffers",
     j = { "<cmd>BufferLinePick<cr>", "Jump" },

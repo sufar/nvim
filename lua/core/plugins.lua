@@ -32,11 +32,14 @@ local plugins = {
       require("onedarkpro").setup({
         options = {
           cursorline = true,
-          -- transparency = true
+          transparency = true
         },
         plugins = {
           nvim_tree = false,
         },
+        colors = {
+          -- cursorline = "#bebebe"
+        }
       })
     end
   },
@@ -379,10 +382,10 @@ local plugins = {
     event = { "VeryLazy" },
   },
 
-  {
-    "uga-rosa/translate.nvim",
-    event = { "VeryLazy" },
-  },
+  -- {
+  --   "uga-rosa/translate.nvim",
+  --   event = { "VeryLazy" },
+  -- },
 
   {
     "kristijanhusak/vim-carbon-now-sh",
