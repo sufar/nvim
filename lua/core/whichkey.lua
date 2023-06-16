@@ -167,6 +167,14 @@ local leader_mappings = {
       "<cmd>BufferLineSortByExtension<cr>",
       "Sort by language",
     },
+    t = {
+      "<cmd>NvimTreeCollapseKeepBuffers<cr>",
+      "NvimTree Keep Buffers",
+    },
+    T = {
+      "<cmd>NvimTreeCollapse<cr>",
+      "NvimTree Close All",
+    }
   },
   d = {
     name = "Debug",
