@@ -52,9 +52,9 @@ vim.list_extend(
 	)
 )
 
-local cmd = nil
-if is_windows then
-	cmd = {
+-- local cmd = nil
+-- if is_windows then
+local	cmd = {
 		os.getenv("JAVA_HOME") .. os_sep .. "bin" .. os_sep .. "java",
 		"-Declipse.application=org.eclipse.jdt.ls.core.id1",
 		"-Dosgi.bundles.defaultStartLevel=4",
@@ -76,14 +76,14 @@ if is_windows then
 		"-data",
 		workspace_dir,
 	}
-else
-	cmd = {
-		mason_home .. "packages" .. os_sep .. "jdtls" .. os_sep .. "bin" .. os_sep .. "jdtls",
-		" -data ",
-		workspace_dir,
-		" -javaagent:" .. mason_home .. "packages" .. os_sep .. "jdtls" .. os_sep .. "lombok.jar",
-	}
-end
+-- else
+-- 	cmd = {
+-- 		mason_home .. "packages" .. os_sep .. "jdtls" .. os_sep .. "bin" .. os_sep .. "jdtls",
+-- 		" -data ",
+-- 		workspace_dir,
+-- 		" -javaagent:" .. mason_home .. "packages" .. os_sep .. "jdtls" .. os_sep .. "lombok.jar",
+-- 	}
+-- end
 
 local config = {
 	cmd = cmd,
