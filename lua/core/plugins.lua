@@ -245,6 +245,7 @@ local plugins = {
 
   {
     "j-hui/fidget.nvim",
+    tag = "legacy",
     event = { "LspAttach" },
   },
 
@@ -390,6 +391,15 @@ local plugins = {
   {
     "kristijanhusak/vim-carbon-now-sh",
     event = { "VeryLazy" },
+  },
+
+  -- tmux
+  {
+    "aserowy/tmux.nvim",
+    event = "VeryLazy",
+    config = function()
+      return require("tmux").setup()
+    end
   }
 }
 

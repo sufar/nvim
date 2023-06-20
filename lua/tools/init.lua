@@ -12,3 +12,6 @@ require "tools.sql"
 require "tools.colorizer"
 require "tools.bookmarks"
 -- require "tools.translate"
+
+-- tmux
+vim.cmd([[autocmd VimEnter,VimLeave * silent !tmux set status off]])
