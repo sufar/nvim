@@ -192,3 +192,35 @@ In neovim exec `:MasonInstall html-lsp`
 ## javascript typescript
 
 In neovim exec `:MasonInstall typescript-language-server`
+
+## tmux
+
+> nvim ~/.tmux.conf
+
+```
+is_vim="ps -o state= -o comm= -t '#{pane_tty}' | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
+
+bind-key -n 'C-h' if-shell "$is_vim" 'send-keys C-h' 'select-pane -L'
+bind-key -n 'C-j' if-shell "$is_vim" 'send-keys C-j' 'select-pane -D'
+bind-key -n 'C-k' if-shell "$is_vim" 'send-keys C-k' 'select-pane -U'
+bind-key -n 'C-l' if-shell "$is_vim" 'send-keys C-l' 'select-pane -R'
+
+bind-key -T copy-mode-vi 'C-h' select-pane -L
+bind-key -T copy-mode-vi 'C-j' select-pane -D
+bind-key -T copy-mode-vi 'C-k' select-pane -U
+bind-key -T copy-mode-vi 'C-l' select-pane -R
+
+bind -n 'M-h' if-shell "$is_vim" 'send-keys M-h' 'resize-pane -L 5'
+bind -n 'M-j' if-shell "$is_vim" 'send-keys M-j' 'resize-pane -D 5'
+bind -n 'M-k' if-shell "$is_vim" 'send-keys M-k' 'resize-pane -U 5'
+bind -n 'M-l' if-shell "$is_vim" 'send-keys M-l' 'resize-pane -R 5'
+
+bind-key -T copy-mode-vi M-h resize-pane -L 1
+bind-key -T copy-mode-vi M-j resize-pane -D 1
+bind-key -T copy-mode-vi M-k resize-pane -U 1
+bind-key -T copy-mode-vi M-l resize-pane -R 1
+
+set  -g pane-border-style fg='#742727',bg=black	# 设置边界颜色（bg背景颜色， fg为线条颜色）
+set  -g pane-active-border-style fg=red,bg=black # 设置正在使用的窗口的边界颜色，在不同窗口切换时边界颜色会变化
+set  -g status-style bg='#0C8A92',fg=black # 底部命令或者状态栏的颜色
+``` 
