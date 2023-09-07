@@ -12,10 +12,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
--------------------------------------- colorscheme -----------------------------------
+  -------------------------------------- colorscheme -----------------------------------
   {
     "sainnhe/edge",
-    lazy = false,    -- make sure we load this during startup if it is your main colorscheme
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
   },
 
@@ -44,7 +44,13 @@ local plugins = {
     end
   },
 
--------------------------------------- core plugins ---------------------------------
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000
+  },
+
+  -------------------------------------- core plugins ---------------------------------
 
   -- I have a separate config.mappings file where I require which-key.
   -- With lazy the plugin will be automatically loaded when it is required somewhere

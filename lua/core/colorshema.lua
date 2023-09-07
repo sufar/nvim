@@ -14,7 +14,7 @@ vim.cmd([[let g:edge_current_word='underline']])
 -- light mode
 -- vim.cmd("set background=light")
 
-vim.cmd.colorscheme("edge")
+-- vim.cmd.colorscheme("edge")
 -------------------------------------------------------------------------
 
 -- dracula
@@ -22,3 +22,8 @@ vim.cmd.colorscheme("edge")
 --   set background=dark
 --   colorscheme dracula
 -- ]])
+
+
+----------------------- catppuccin ----------------
+-- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+vim.cmd.colorscheme("catppuccin")
