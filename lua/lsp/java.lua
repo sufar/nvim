@@ -28,7 +28,8 @@ local bundles = {
 			.. os_sep
 			.. "server"
 			.. os_sep
-			.. "com.microsoft.java.debug.plugin-*.jar",
+			.. "com.microsoft.java.debug.plugin-*.jar"
+		  .. "-javaagent:" .. mason_home .. "packages" .. os_sep .. "jdtls" .. os_sep .. "lombok.jar",
 		1
 	),
 }
@@ -45,7 +46,8 @@ vim.list_extend(
 				.. os_sep
 				.. "server"
 				.. os_sep
-				.. "*.jar",
+				.. "*.jar"
+		    .. "-javaagent:" .. mason_home .. "packages" .. os_sep .. "jdtls" .. os_sep .. "lombok.jar",
 			1
 		),
 		"\n"
